@@ -1,7 +1,12 @@
-# from django.shortcuts import render
+from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
-def hello(request):
+def home(request):
+    # return HttpResponse("Hello world!")
+    return render(request, "textbookApp/home.html")
 
-    return HttpResponse("Hello world!")
+
+def about(request):
+    return render(request, "textbookApp/about.html")
