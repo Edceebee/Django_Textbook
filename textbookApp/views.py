@@ -1,11 +1,17 @@
+from django.db.models.functions import text
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views.generic import TemplateView
+from django.views.generic import ListView
+from .models import Post
+from textbookApp.models import Post
 
 
 def home(request):
-    # return HttpResponse("Hello world!")
-    return render(request, "textbookApp/home.html")
+    texts = Post.objects.all()
+    context = {
+        'texts': texts
+    }
+    return render(request, "textbookApp/home.html", context)
 
 
 def about(request):
