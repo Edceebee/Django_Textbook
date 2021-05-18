@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
 
+</head>
 
 <body>
 {% extends 'base.html' %}
@@ -12,18 +12,22 @@
 {% block content %}
 
 
-
-<h1>HOME PAGE</h1>
+<hr>
+<h2>HOME PAGE</h2>
+<hr>
 <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam consectetur maxime minima non odio.</h2>
 
 
-<h1>All books</h1>
-{% for things in texts %}
-<ul>
-    <li>{{ things.another_text }}</li>
-    <li>{{ things.text }}</li>
-</ul>
+<h1>DJANGO BLOG</h1>
+
+{% for things in object_list %}
+<h2> {{ things.title }} </h2>
+<p>{{ things.body }}</p>
+
 {% endfor %}
+
+
+
 
 
 </body>
